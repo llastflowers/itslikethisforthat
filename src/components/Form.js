@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 const Form = ({ onSubmit }) => (
   <form onSubmit={onSubmit}>
-    What is <input type="text" placeholder="anything" /> ?<br/>
-    <button>Ask!</button>
+    <button>What does your startup do?</button>
   </form>
 );
 

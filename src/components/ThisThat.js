@@ -7,7 +7,7 @@ const ThisThat = ({ object }) => {
   const thing2 = object.that;
   return (
     <section>
-      <h1>What is that thing?</h1>
+      {/* <h1>What is that thing?</h1> */}
       <h2>So, basically, it&#39;s like {thing1} for {thing2}.</h2>
     </section>
   );
