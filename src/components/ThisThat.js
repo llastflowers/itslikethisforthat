@@ -8,7 +8,7 @@ const ThisThat = ({ object }) => {
   return (
     <section>
       <h1>What is that thing?</h1>
-      <h2>It&#39;s like {thing1} for {thing2}.</h2>
+      <h2>So, basically, it&#39;s like {thing1} for {thing2}.</h2>
     </section>
   );
 };
