@@ -1,18 +1,37 @@
 import React, { Component } from 'react';
-import Thisthat from '../components/ThisThat';
+import Form from '../components/Form';
+import ThisThat from '../components/ThisThat';
 import { getThisThat } from '../services/ThisThatAPI';
 
 export default class ItsLike extends Component {
     state = {
-    input: '',
-      thisthat: '',
+      showResult: false,
+      output: {},
     }
 
-    componentDidMount() {
+    fetchThisThat = () => {
+      getThisThat()
+        .then(output => this.setState({ output }));
+    };
+
+    toggleResult = () =>
+      this.setState(state => ({ ...state, showResult: !state.showResult }));
+
+    handleSubmit = event => {
+      event.preventDefault();
+      this.toggleResult();
       this.fetchThisThat();
     }
 
-    componentWillUpdate(prevProps, prevState) {
-        if(prevState.)
+    render() {
+      const { showResult } = this.state;
+      return (
+        <>
+          {!showResult && <Form
+            onSubmit={this.handleSubmit}/>}
+          {showResult && <ThisThat object={this.state.output}/>}
+        </>
+      );
+    
     }
 }
