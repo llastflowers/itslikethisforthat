@@ -5,31 +5,34 @@ import { getThisThat } from '../services/ThisThatAPI';
 
 export default class ItsLike extends Component {
     state = {
-      showResult: false,
+      // showResult: false,
       output: {},
     }
 
     fetchThisThat = () => {
-      getThisThat()
+      return getThisThat()
         .then(output => this.setState({ output }));
     };
 
-    toggleResult = () =>
-      this.setState(state => ({ ...state, showResult: !state.showResult }));
+
+
+    // toggleResult = () =>
+    //   this.setState(state => ({ ...state, showResult: !state.showResult }));
 
     handleSubmit = event => {
       event.preventDefault();
-      this.toggleResult();
+      // this.toggleResult();
       this.fetchThisThat();
     }
 
     render() {
-      const { showResult } = this.state;
+      // const { showResult } = this.state;
       return (
         <>
-          {!showResult && <Form
-            onSubmit={this.handleSubmit}/>}
-          {showResult && <ThisThat object={this.state.output}/>}
+          <Form
+            onSubmit={this.handleSubmit}/>
+          <ThisThat 
+            object={this.state.output}/>
         </>
       );
     

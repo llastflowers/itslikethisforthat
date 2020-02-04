@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ThisThat = (object) => {
+const ThisThat = ({ object }) => {
   console.log(object);
   const thing1 = object.this;
   const thing2 = object.that;
