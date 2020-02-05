@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
+// import ItsLike from '../containers/ItsLike';
+import ItsLikeFn from '../containers/ItsLikeFn';
 
-export default function App() {
-  return <h1>Hello World</h1>;
+export default class App extends Component {
+  render() {
+    return (
+      <>
+        <ItsLikeFn />
+      </>
+    );
+  }
 }
   
