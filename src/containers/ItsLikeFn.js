@@ -1,21 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Form from '../components/Form';
 import ThisThat from '../components/ThisThat';
-import { getThisThat } from '../services/ThisThatAPI';
+import { useOutput } from '../hooks/output';
 
 const ItsLikeFn = () => {
-  const [showResult, setShowResult] = useState(false);
-  const [output, setOutput] = useState({});
-
-  const toggleResult = () =>
-    setShowResult(true);
-
-  const handleClick = () => {
-    event.preventDefault();
-    getThisThat()
-      .then(output => setOutput(output));
-    toggleResult();
-  };
+  const { showResult, output, handleClick } = useOutput();
 
   return (
     <>     

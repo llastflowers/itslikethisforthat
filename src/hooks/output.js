@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import Form from '../components/Form';
-import ThisThat from '../components/ThisThat';
+import { useState } from 'react';
 import { getThisThat } from '../services/ThisThatAPI';
 
-const ItsLikeFn = () => {
+export const useOutput = () => {
   const [showResult, setShowResult] = useState(false);
   const [output, setOutput] = useState({});
 
@@ -17,13 +15,5 @@ const ItsLikeFn = () => {
     toggleResult();
   };
 
-  return (
-    <>     
-      {!showResult && <Form
-        handleClick={handleClick}/>}
-      {showResult && <ThisThat object={output}/>}
-    </>
-  );
+  return { showResult, output, handleClick };
 };
-
-export default ItsLikeFn;
